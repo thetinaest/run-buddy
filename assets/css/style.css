@@ -24,12 +24,11 @@ header {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  position: -webkit-sticky;
   position: sticky;
+  position: -webkit-sticky;
   top: 0;
   background-image: url("../images/hero-bg.jpg");
   background-size: cover;
-  background-position: center;
   background-attachment: fixed;
   background-position: 80%;
   z-index: 9999;
@@ -113,7 +112,6 @@ section {
 .hero {
   background-image: url('../images/hero-bg.jpg');
   background-size: cover;
-  background-position: center;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -140,13 +138,17 @@ section {
 
 .hero-form {
   border: 3px solid var(--secondary-color);
-  background-color: rgba(252, 225, 56, 0.8);
+  background-color: rgba(255, 225, 56, 0.8);
   padding: 20px;
   color: var(--secondary-color);
   width: 40%;
   margin: 3.5%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-form button:hover {
+  background-color: var(--tertiary-color);  
 }
 
 .hero-form h3 {
@@ -187,10 +189,6 @@ section {
   border-radius: 10px;
 } 
 
-.hero-form button:hover {
-  background-color: var(--tertiary-color);  
-}
-
 .checkbox-wrapper input, .radio-wrapper input {
   opacity: 0;
 }
@@ -213,24 +211,14 @@ section {
   left: -30px;
 }
 
-.checkbox-wrapper input + label::after, 
-.radio-wrapper input + label::after {
-  content: none;
-}
-
-.checkbox-wrapper input:checked + label::after, 
-.radio-wrapper input:checked + label::after {
-  content: "";
-}
-
 .radio-wrapper label::before {
   border-radius: 50%;
 }
 
 .radio-wrapper label::after {
   content: "";
-  width: 20px;
   height: 20px;
+  width: 20px;
   border-radius: 50%;
   background: var(--secondary-color);
   position: absolute;
@@ -251,6 +239,15 @@ section {
   transform: rotate(-58deg);
 }
 
+.checkbox-wrapper input + label::after, 
+.radio-wrapper input + label::after {
+  content: none;
+}
+
+.checkbox-wrapper input:checked + label::after, 
+.radio-wrapper input:checked + label::after {
+  content: "";
+}
 /* HERO STYLES END */
 
 
@@ -275,7 +272,6 @@ section {
 /* SECTION TITLE STYLES END */
 
 /* WHAT WE DO STYLES */
-
 .intro p {
   line-height: 1.7;
   color: var(--tertiary-color);
@@ -302,8 +298,8 @@ section {
   justify-content: space-between;
 }
 
-.step:not(:last-child) {
-  border-bottom: 1px solid var(--tertiary-color);
+.step:last-child {
+  border-bottom: none;
 }
 
 .step h3 {
@@ -342,7 +338,6 @@ section {
   line-height: 1.5;
   color: var(--secondary-color);
 }
-
 /* WHAT YOU DO STYLES END */
 
 /* MEET THE TRAINERS START */
@@ -440,6 +435,7 @@ section {
 
 .contact-form input:focus, .contact-form textarea:focus {
   background-color: rgba(255,255,255, 1);
+  outline: none;
 }
 
 .contact-form button {
@@ -461,8 +457,6 @@ section {
 .contact-info a {
   color: var(--primary-color);
 }
-
-
 /* REACH OUT STYLES END */
 
 /* UTILITIES */
@@ -553,6 +547,10 @@ section {
 
   .step-text {
     flex: 100%;  
+  }
+
+  .trainer-bio h3, .trainer-bio h4 {
+    display: block;
   }
 }
 
